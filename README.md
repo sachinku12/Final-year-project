@@ -2,3 +2,132 @@
 DESIGN AND SIMULATION OF A FERROELECTRIC CHARGE 
 PLASMA TUNNEL FIELD EFFECT TRANSISTOR FOR THE 
 DETECTION OF CHARGED AND UNCHARGED BIOMOLECULES
+TCAD_Code
+go atlas
+mesh space.mult=1.0
+#
+x.mesh loc=-0.005 spac=0.001
+x.mesh loc=0.0 spac=0.01
+x.mesh loc=0.005 spac=0.005
+x.mesh loc=0.050 spac=0.0001
+x.mesh loc=0.075 spac=0.0001
+x.mesh loc=0.100 spac=0.0001
+x.mesh loc=.102 spac=0.0001
+x.mesh loc=0.107 spac=0.0001
+x.mesh loc=0.125 spac=0.0001
+x.mesh loc=0.132 spac=0.0002
+x.mesh loc=0.150 spac=0.0002
+x.mesh loc=0.152 spac=0.0002
+x.mesh loc=0.177 spac=0.0002
+x.mesh loc=0.200 spac=0.001
+x.mesh loc=0.217 spac=0.01
+x.mesh loc=0.227 spac=0.01
+x.mesh loc=0.232 spac=0.001
+#
+y.mesh loc=-0.010 spac=0.0005
+y.mesh loc=-0.003 spac=0.0005
+y.mesh loc=-0.0005 spac=0.0005
+y.mesh loc=0.0 spac=0.0005
+y.mesh loc=0.005 spac=0.0005
+y.mesh loc=0.010 spac=0.0005
+y.mesh loc=0.0105 spac=0.0005
+y.mesh loc=0.013 spac=0.0005
+y.mesh loc=0.020 spac=0.0005
+#
+region num=1 y.min=-0.010 y.max=0.0 x.min=-0.005   material=air
+region num=2 y.max=0.00 y.min= -0.0005 x.min=0.0 x.max=0.072  material=sio2
+region num=3 y.max=0.00 y.min= -0.0005 x.min=0.152 x.max=0.177  material=sio2
+region num=4 y.max=0.00 y.min= -0.0005 x.min=0.072 x.max=0.152  user.material=ferro
+region num=5 y.max=-0.0005 y.min=-0.0085 x.min=0.072 x.max=0.092 user.material=cavity
+region num=6 y.min=0.0 y.max=0.010 x.min=0.072 x.max=0.207    material=Si
+region num=7 y.min=0.010 y.max=0.020 x.min=-0.015 material=air
+region num=8 y.min=0.010 y.max=0.0105  x.min=0.0 x.max=0.072   material=sio2
+region num=9 y.min=0.010 y.max=0.0105  x.min=0.152 x.max=0.177 material=sio2
+region num=10 y.min=0.010 y.max=0.0105 x.min=0.072 x.max=.152 user.material=ferro
+region num=11 y.max=0.0185 y.min=0.0105 x.min=0.072 x.max=.092 user.material=cavity
+region num=12 y.max=-0.0005 y.min=-0.0085 x.min=0.132 x.max=0.152 user.material=cavity
+region num=13 y.max=0.0185  y.min=0.0105  x.min=0.132 x.max=0.152 user.material=cavity
+region num=14 y.min=-0.005 y.max=0.015 x.min=0.177 x.max=0.217 material=Si
+region num=15 y.min=-0.0055 y.max=-0.005 x.min=0.177 x.max=0.227 material=sio2
+region num=16 y.min=0.015 y.max=0.0155 x.min=0.177 x.max=0.227 material=sio2
+region num=17 x.min=0.157 x.max=0.177 y.max=-0.0005 y.min=-0.0055 material=hfo2
+region num=18 x.min=0.157 x.max=0.177 y.max=0.0155 y.min=0.0105 material=hfo2
+region num=19 x.min=0.092 x.max=0.132 y.min=-0.006 y.max=-0.0025 user.material=cavity
+region num=20 x.min=0.092 x.max=0.132 y.max=0.016 y.min=0.0125 user.material=cavity
+region num=21 x.min=0.092 x.max=0.132 y.max=-0.0005 y.min=-0.0025 material=hfo2
+region num=22 x.min=0.092 x.max=0.132 y.max=0.0125 y.min=0.0105 material=hfo2
+region num=23 x.min=0.092 x.max=0.132 y.max=-0.006 y.min=-0.0085 material=hfo2
+region num=24 x.min=0.092 x.max=0.132 y.max=0.0185 y.min=0.016 material=hfo2
+region num=25 x.min=0.217 x.max=0.227 y.min=-0.005 y.max=0.015 material=Ge
+region num=26 y.min=0.0 y.max=0.010 x.min=0.0 x.max=0.072    material=SiGe x.com=0.3 
+#
+qtregion number=1 pts.tunnel=101 x1=0.05 y1=0.00011 x2=0.05 y2=0.01 x3=0.155 y3=0.01 x4=0.155 y4=0.00011 snrm.beg=0.04 snrm.end=0.156
+#
+electrode name=gate x.min=0.072 x.max=0.092 y.max=-0.0085 y.min=-0.0095
+electrode name=gate1 x.min=0.092 x.max=0.132 y.max=-0.0085 y.min=-0.0095 
+electrode name=gate2  x.min=0.132 x.max=.152 y.max=-0.0085 y.min=-0.0095
+electrode name=gate x.min=0.072 x.max=0.092 y.min=0.0185 y.max=0.0195
+electrode name=gate1 x.min=0.092 x.max=0.132 y.min=0.0185 y.max=0.0195
+electrode name=gate2 x.min=0.132 x.max=.152  y.min=0.0185 y.max=0.0195
+electrode name=drain1 x.min=.157 x.max=.227 y.min=-0.007  y.max= -0.0055
+electrode name=drain x.min=.157  x.max=.227  y.max=0.0175 y.min=0.0155
+electrode name=drain2 x.min=.227 x.max=.232 y.min= -0.007 y.max=0.0175
+electrode name=source x.min=0.0 x.max=0.070 y.min=-0.0025  y.max= -0.0005
+electrode name=source1 x.min=0.0 x.max=0.070  y.max=0.0125 y.min=0.0105
+electrode name=source2 x.max=0.0 x.min=-0.010 y.min= -0.0025 y.max=0.0125
+#
+material material=cavity user.group=insulator user.default=oxide permittivity="22"
+material material=silicon me.tunnel=0.12 region=6
+material material=silicon me.tunnel=0.12 region=14 
+material material=ferro user.group=insulator user.default=oxide ferro.ps=25e-6 ferro.pr=1e-6   ferro.ec=2000000  ferro.eps=35
+#
+doping uniform p.type conc=1e16 reg=6 
+doping uniform p.type conc=1e16 reg=14
+doping uniform n.type conc=2e18 reg=25 
+#
+interf qf=0.0
+#
+contact name=gate p.poly workfunction=4.1
+contact name=gate1 p.poly workfunction=4.8 common=gate
+contact name=gate2 p.poly workfunction=4.1 common=gate
+contact name=drain n.poly workfunction=3.9
+contact name=drain1 n.poly workfunction=3.9 common=drain
+contact name=drain2 n.poly workfunction=3.9 common=drain  
+contact name=source p.poly workfunction=5.93
+contact name=source1 p.poly workfunction=5.93 common=source
+contact name=source2 p.poly workfunction=5.93 common=source
+# 
+models qtunn.dir=ydir bbt.nonlocal temperature=300 \
+fermi ni.fermi srh auger cvt \
+fldmob conmob bgn print 
+#
+output val.band con.band qfn e.field j.electron j.hole j.conduction j.total ex.field ey.field flowline e.mobility h.mobility qss e.temp h.temp j.disp
+save outfile=cv.str
+tonyplot cv.str
+method newton autonr trap maxtrap=10
+solve init 
+solve prev
+solve vdrain=0.0
+solve vdrain=0.001
+solve vdrain=0.1
+solve vdrain=0.2
+solve vdrain=0.3
+solve vdrain=0.4
+solve vdrain=0.5
+solve vdrain=0.7
+solve vdrain=0.8
+solve vdrain=0.9
+solve vdrain=1.0
+log outf=cv_1.log master
+solve  vgate=0.0 vstep=0.02 vfinal=0.72 name=gate
+save outf=cv1.str
+tonyplot cv1.str
+tonyplot cv_1.log
+#extract init infile="cv_1.log"
+extract name="vt" x.val from curve((v."gate"),log10(abs(i."drain"))) where y.val=-7
+extract name="subvt_slope" slope(maxslope(curve(v."gate",log10(abs(i."drain")))))
+extract name="subvt_swing" 1.0/slope(maxslope(curve(v."gate",log10(abs(i."drain")))))
+extract name="Ioff_n" y.val from curve(v."gate",i."drain") where x.val=0
+extract name="Ion_n" y.val from curve(v."gate",i."drain") where x.val=0.72
+extract  name ="Ion_Ioff" $Ion_n/$Ioff_n
+quit
