@@ -2,8 +2,28 @@
 DESIGN AND SIMULATION OF A FERROELECTRIC CHARGE 
 PLASMA TUNNEL FIELD EFFECT TRANSISTOR FOR THE 
 DETECTION OF CHARGED AND UNCHARGED BIOMOLECULES
-
-
+# ABSTRACT 
+In recent years, the demand for highly sensitive, low-power, and label-free biosensors has 
+increased significantly due to their wide applications in healthcare diagnostics, 
+environmental monitoring, and food safety. Conventional MOSFET based sensors face 
+serious limitations such as high leakage current and poor sensitivity at nanoscale 
+dimensions. To address these challenges, Tunnel Field Effect Transistor (TFET)-based 
+biosensors have emerged as a promising alternative due to their steep subthreshold swing 
+and low power consumption. 
+In this work, a dielectrically modulated pocket doped TFET biosensor is analyzed for 
+label-free detection of biomolecules. The sensing mechanism is based on variations in 
+dielectric constant and charge density of biomolecules placed in the cavity region. The 
+proposed device demonstrates significant improvement in ON current, sensitivity, and 
+selectivity due to enhanced band-to-band tunneling. Detailed analysis of transfer 
+characteristics, threshold voltage shift, and sensitivity parameters has been carried out. 
+The results indicate that the device exhibits excellent sensitivity for higher dielectric 
+constant biomolecules and is capable of distinguishing between neutral and charged 
+biomolecules effectively. Hence, the proposed biosensor can be considered a strong 
+candidate for next-generation biomedical sensing applications. 
+In addition, the integration of ferroelectric materials introduces the negative capacitance 
+effect, which enhances gate control and improves the overall device sensitivity. The 
+charge plasma concept eliminates the need for physical doping by inducing carriers using 
+metal work functions.
 # project code silvaco TCAD
 go atlas
 mesh space.mult=1.0
