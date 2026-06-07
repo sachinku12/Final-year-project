@@ -131,3 +131,4 @@ extract name="Ioff_n" y.val from curve(v."gate",i."drain") where x.val=0
 extract name="Ion_n" y.val from curve(v."gate",i."drain") where x.val=0.72
 extract  name ="Ion_Ioff" $Ion_n/$Ioff_n
 quit
+Add project report PDF
